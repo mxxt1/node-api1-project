@@ -28,11 +28,20 @@ server.get('/api/users', (req, res) => {
 //POST /api/users create user with info in req body
 
 server.post('/api/users', (req,res) => {
+    const userData = req.body;
 
+    console.log(userData);
 
-
-
-})
+    db.insert(userData)
+    .then( user => {
+        console.log(user)
+        res.status(201).json(user);
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json({error: 'failed to add new user'})
+    });
+});
 
 
 
