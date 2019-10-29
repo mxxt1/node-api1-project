@@ -47,7 +47,7 @@ server.post('/api/users', (req,res) => {
 
 
 
-//GET /api/users/:id return specified data based on user id -- not working
+//GET /api/users/:id return specified data based on user id -- WORKING! Missing 'S' in /api/userS/:id
 
 
 server.get('/api/users/:id', (req,res) => {
